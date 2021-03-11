@@ -32,7 +32,7 @@ Route::get('/retrieveCEP/{cep}', function($cep) {
         CURLOPT_TIMEOUT => 30, //30s timeout
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_NONE,
         CURLOPT_RETURNTRANSFER => true, //Retorna o resultado em curl_exec()
-        CURLOPT_SSL_VERIFYPEER => true)); //Ignorar certificado SSL
+        CURLOPT_SSL_VERIFYPEER => true)); //Usar certificado SSL
     $DadosCEP = curl_exec($cURL);
     $Erro = curl_error($cURL);
     curl_close($cURL); //Fecha a sessão
@@ -44,7 +44,7 @@ Route::get('/retrieveCEP/{cep}', function($cep) {
             CURLOPT_TIMEOUT => 30, //30s timeout
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_NONE,
             CURLOPT_RETURNTRANSFER => true, //Retorna o resultado em curl_exec()
-            CURLOPT_SSL_VERIFYPEER => true)); //Ignorar certificado SSL
+            CURLOPT_SSL_VERIFYPEER => true)); //Usar certificado SSL
         $DadosCEP = curl_exec($cURL);
         $Erro = curl_error($cURL);
         curl_close($cURL); //Fecha a sessão
